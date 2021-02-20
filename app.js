@@ -7,7 +7,7 @@ const bodyparser = require("body-parser");
 
 
 app.use(bodyparser.urlencoded({extended:true}));
-
+// app.use(express.static("public"));
 app.get("/" , function(req , res){
 res.sendFile(__dirname + "/index.html");
 });
@@ -21,17 +21,16 @@ const url ="https://api.openweathermap.org/data/2.5/weather?q="+ query +"&appid=
     response.on('data',function(data){
       const variable = JSON.parse(data);
       console.log(variable);
+      console.log(data);
 
       var desc = variable.main.temp;
       console.log(desc);
       var weatherDescription = variable.weather[0].description;
       var weatherIcon = variable.weather[0].icon;
       res.send("<h1>The Temprature of the "+ query + "  is: " + desc + "</h1>" + "\n"+ "The Weather Condition in "+ query +" is " + weatherDescription);  // res is used for the response to the client site.
-
     })
   })
 });
-
 
 
 app.listen(3000,function(){
