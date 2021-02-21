@@ -16,21 +16,24 @@
   <link rel="stylesheet" href="public/styles.css">
   </head>
   <body class="bg">
+    <h1 class="tempatureResultClass">The Temprature Delhi is :-  </h1>
     <div class=" mainWeatherClass">
       <h1 class ="weatherHeading">WEATHER API PROJECT</h1>
       <form action="/" method="post" class="weatherForm">
-        <label class=cityNameClass> City Name </label>
-        <input class="cityInput" type="text" name="cityName" placeholder="City"></input>
-        <label class="countryNameClass">Country Name</label>
-        <input class="countryInput" type="text" name="country" placeholder=" Country Name ">
+        <label class=cityNameClass id="cityName"> City Name </label>
+        <input class="cityInput" id="cityInput" type="text" name="cityName" placeholder="City" value="Delhi" autocomplete="off"></input>
+        <label class="countryNameClass" id="countryName">Country Name</label>
+        <input class="countryInput" id="countryInput" type="text" name="countryName" placeholder=" Country Name" value="IN" autocomplete="off">
         <div class="checkBoxClass">
-          <input type="radio" name="" value="">
+          <input type="radio" name="Format" value="coordinateFormat">
           <label>Coordinate Format</label>
-          <input type="radio" name="" value="">
+          <input type="radio" name="Format" value="nameFormat">
           <label>Name Format</label>
         </div>
         <button class=" submitButtonClass btn btn-lg" type="submit" name="button">Submit</button>
       </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="public/Weather.js" charset="utf-8"></script>
   </body>
 </html>
