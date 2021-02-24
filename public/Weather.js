@@ -61,12 +61,7 @@ $(".weatherForm").on(('submit'), function() { // on method specifies the current
         } else if (radiovalue === "nameFormat") {
             $('#cityInput').val(cityName);
             $('#countryInput').val(countryName);
-        } else {
-            $('#cityInput').val(cityName);
-            $('#countryInput').val(countryName);
         }
-
-
 
         $('.tempatureResultClass').text(" The Temprature of " + cityName + " is :- " + temprature);
 
