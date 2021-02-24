@@ -3,14 +3,11 @@ $('input[type="radio"]').click(function() {
     switch (value) {
         case 'coordinateFormat':
             {
-                $('#cityName').text("Latitude");
-                $('#countryName').text("Longitude");
                 $('#cityInput').attr('placeholder', 'Latitude');
                 $('#countryInput').attr('Placeholder', 'Longitude');
-
                 break;
-
             }
+
         case 'nameFormat':
             {
                 $('#cityName').text("City Name");
@@ -57,17 +54,16 @@ $(".weatherForm").on(('submit'), function() { // on method specifies the current
         let cityName = data.name;
 
         let radiovalue = $('input[name="Format"]:checked').val();
-        if (radiovalue === 'coordinateFormat') {
 
-            let cityNameValue = $('#cityInput').val();
-            console.log(cityNameValue);
-
-
-
-
+        if (radiovalue === "coordinateFormat") {
+            $('#cityInput').val(latitude); // Used For Replacing the Values in the Format.
+            $('#countryInput').val(longitude);
         } else if (radiovalue === "nameFormat") {
-            $('#cityInput').attr('value', cityName);
-            $('#countryInput').attr('value', countryName);
+            $('#cityInput').val(cityName);
+            $('#countryInput').val(countryName);
+        } else {
+            $('#cityInput').val(cityName);
+            $('#countryInput').val(countryName);
         }
 
 
